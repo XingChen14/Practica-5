@@ -17,6 +17,7 @@ public class Juego {
             Jugador jugador1 = new Jugador(nombreJugador1);
             Jugador jugador2 = new Jugador(nombreJugador2);
 
+            // Cambiar nombre
             jugador1.nombre = "Pedro";
             
 
@@ -53,5 +54,11 @@ public class Juego {
                 System.out.println(carta);
             }
         } // El scanner se cerrará automáticamente al salir del bloque try
+
+        // Crear una carta para visualizar
+        Carta carta1 = new Carta(1, Carta.Palo.Corazones); // Por ejemplo, As de Corazones
+
+        // Visualizar la carta en la posición (20, 40)
+        Visualizador.carta(carta1, new Posicion(20, 40));
     }
 }
