@@ -5,9 +5,9 @@
 
 public class Carta {
     public enum Palo {
-        CORAZONES, DIAMANTES, TREBOLES, PICAS
+        Corazones, Diamantes, Treboles, Picas
     }
-
+    
     private int valor; // De 1 (As) a 13 (Rey)
     private Palo palo;
 
