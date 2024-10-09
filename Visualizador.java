@@ -43,21 +43,21 @@ public class Visualizador {
 
         // Dibujar los círculos dentro del rectángulo
         for (int i = 0; i < cantidadCirculos; i++) {
-            // Calcular la posición de cada círculo
-            int circleX = rectX + espaciadoHorizontal + (i % maxCirculosPorFila) * (circleDiameter + espaciadoHorizontal); 
-            int circleY = rectY + espaciadoVertical + (i / maxCirculosPorFila) * (circleDiameter + espaciadoVertical);
+            // Calcular la posición de cada círculo (ajustado para 5 columnas y 3 filas)
+            int circleX = rectX + 10 + (i % 5) * 20; // Espaciado horizontal para 5 círculos por fila
+            int circleY = rectY + 10 + (i / 5) * 20; // Espaciado vertical para 3 filas
 
             // Crear el círculo y dibujarlo
             Circulo circle = new Circulo();
             circle.changeColor(getColorName(circleColor));
-            circle.changeSize(10); // Diámetro de 10
+            circle.changeSize(15); // Diámetro de 15 (más pequeño para que encaje mejor)
             circle.changePosition(circleX, circleY); // Método que necesitarás agregar a Circle
             circle.makeVisible(); // Hacer visible el círculo
         }
 
-        // Dibujar el símbolo del palo debajo de los círculos
-        drawSymbol(canvas, c.getPalo(), rectX, rectY + rectHeight + 10); // Posición debajo del rectángulo
 
+         // Dibujar el símbolo del palo debajo de los círculos
+         drawSymbol(canvas, c.getPalo(), rectX + rectWidth / 2, rectY + rectHeight + 20); // Posición debajo del rectángulo
     }
 
     private static void drawSymbol(Canvas canvas, Carta.Palo palo, int x, int y) {
